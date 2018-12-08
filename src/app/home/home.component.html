@@ -1,0 +1,26 @@
+<!-- <p>{{name | uppercase}}</p>
+<p>{{today | date:"dd MMMM,yyyy" | uppercase}}</p>
+<p>{{0.123 | percent}}</p>
+<p>{{12 | currency:'INR'}}</p> -->
+
+<!-- structural directives -->
+<!-- manipulating the DOM(Document Object Model) i.e adding, removing and modifying HTML elements -->
+<!-- *ngIf,*ngFor,ngSwitch -->
+<button (click)="show()">show</button>
+<div *ngIf="hide === 'show'">
+  <p>Hello world</p>
+</div>
+<div>
+  <div *ngFor="let a of arr">
+    <p *ngIf="a.age > 20 || (a.age > 20 && a.age < 23)">{{a.name}} {{a.age}}</p>
+  </div>
+</div>
+<ul *ngFor="let a of arr" [ngSwitch]="a.country">
+  <li *ngSwitchCase = "'IN'" class="text-primary">{{a.name}}</li>
+  <li *ngSwitchCase = "'US'" class="text-success">{{a.name}}</li>
+  <li *ngSwitchCase = "'UK'" class="text-warning">{{a.name}}</li>
+  <li *ngSwitchDefault class="text-danger">{{a.name}}</li>
+
+
+</ul>
+
